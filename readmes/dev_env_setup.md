@@ -21,6 +21,11 @@ git clone --recurse-submodule git@github.com:Unity-Technologies/Robotics-Nav2-SL
 ```  
 >Observe our usage of `--recurse-submodules` to ensure any dependencies are checked out. If you miss this part, you will need to use `git submodule update --init --recursive` later to download and update the submodules.
 
+UPDATE BY RIVIERA: Use this command instead:
+```
+git clone --recurse-submodule https://github.com/rivie13/Robotics-Nav2-SLAM-Example.git
+```
+
 ---
 
 ## Set Up the ROS 2 Environment
