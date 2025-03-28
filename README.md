@@ -18,6 +18,7 @@ We're currently working on lots of things! As a first step for this tutorial, pl
 1. ### [Running the Example](readmes/run_example.md)
 1. ### [Visualizing with Unity](readmes/unity_viz.md)
 1. ### [Making a Custom Visualizer](readmes/custom_viz.md)
+1. ### [Using the Custom TurtleBot3 Robot](readmes/custom_robot.md)
 
 ## Understanding the Project Components
 * ### [Breakdown of this Example](readmes/explanation.md)
