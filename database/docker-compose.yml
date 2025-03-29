@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  # Option 1: Use this if you want Docker to run its own PostgreSQL
+  # Uncomment if you prefer a containerized database
+  # postgres:
+  #   image: postgres:14
+  #   container_name: simulation-postgres
+  #   environment:
+  #     POSTGRES_DB: simulation_db
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+  #   ports:
+  #     - "5433:5432"  # Using 5433 to avoid conflict with Windows PostgreSQL
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   networks:
+  #     - simulation-network
+
+  # Option 2: PgAdmin container only
+  # This connects to your Windows PostgreSQL instance
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: simulation-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    networks:
+      - simulation-network
+    # Remove dependency on postgres since we're using Windows PostgreSQL
+    # depends_on:
+    #   - postgres
+
+  # API Server container
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: simulation-api
+    # Load environment variables from .env file
+    env_file:
+      - .env
+    environment:
+      # Set default values that can be overridden by .env file
+      - FLASK_ENV=development
+      # Windows host from Docker
+      - POSTGRES_HOST=host.docker.internal
+    ports:
+      - "5000:5000"
+    networks:
+      - simulation-network
+    # Extra host setting to help resolve Windows host from Docker
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - .:/app
+
+networks:
+  simulation-network:
+    driver: bridge
+
+volumes:
+  postgres_data: 

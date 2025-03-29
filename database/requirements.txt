@@ -1,0 +1,8 @@
+Flask==2.2.3
+Flask-SQLAlchemy==3.0.3
+Flask-Migrate==4.0.4
+python-dotenv==1.0.0
+psycopg2-binary
+SQLAlchemy==2.0.15
+Flask-CORS==3.0.10
+werkzeug==2.2.3 
