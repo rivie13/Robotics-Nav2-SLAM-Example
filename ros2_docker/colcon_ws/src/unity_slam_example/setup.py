@@ -1,6 +1,5 @@
 import glob
 import os
-
 from setuptools import setup
 
 package_name = 'unity_slam_example'
@@ -12,11 +11,9 @@ setup(
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        (os.path.join('share', package_name), [
-                                                'rviz/nav2_unity.rviz',
-                                                'launch/unity_slam_example.py',
-                                                'launch/unity_viz_example.py'
-                                                ])
+        # Correctly install all files under 'launch' and 'rviz' directories
+        (os.path.join('share', package_name, 'launch'), glob.glob('launch/*.py')),
+        (os.path.join('share', package_name), ['rviz/nav2_unity.rviz']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
