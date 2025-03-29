@@ -176,6 +176,28 @@ The database contains a `simulation_events` table with the following columns:
   - Verify credentials in pgAdmin4 by testing a connection
   - Try creating a new database user with a known password if needed
 
+### Migration System Issues
+
+- **IMPORTANT: Never delete the `alembic_version` table in your database**
+  - This table is used by Alembic (SQLAlchemy's migration tool) to track migration versions
+  - Deleting it will break the migration system and can cause initialization failures
+
+- **If you've already deleted the `alembic_version` table or have migration issues**:
+  - Run the provided `fix_migrations.bat` script to repair the migration system:
+    ```cmd
+    cd C:\Users\rivie\Robotics-Nav2-SLAM-Example\database
+    fix_migrations.bat
+    ```
+  - This script will:
+    1. Create a fresh migration representing your current schema
+    2. Stamp the database with this migration version
+    3. Repopulate the simulation_events table with sample data if empty
+
+- **For other migration issues**:
+  - Check that the migrations/versions directory is not empty
+  - Ensure your database user has permission to create tables
+  - Review any error messages in the console output
+
 ## Future Extensions
 
 - Add more detailed data collection about robot performance

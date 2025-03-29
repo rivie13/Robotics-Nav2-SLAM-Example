@@ -24,7 +24,7 @@ call venv\Scripts\activate.bat
 
 REM Install dependencies
 echo Installing dependencies...
-pip install -r requirements.txt -q
+pip install -r requirements.txt
 
 REM Initialize the database
 echo Initializing database...
