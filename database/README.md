@@ -116,6 +116,8 @@ For convenience, a Windows batch file is provided to automate the setup and star
 2. **Access API**
    - The API will be available at http://localhost:5000
 
+   To confirm the api is working correctly you can try this: http://localhost:5000/api/events
+
 ## Unity Integration
 
 1. Add the `DatabaseConnector.cs` script to a GameObject in your Unity scene
