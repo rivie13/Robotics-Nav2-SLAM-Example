@@ -54,7 +54,7 @@ If you've forgotten your PostgreSQL password, you have two options:
    - Grant the appropriate privileges to the user
    - Then use those credentials as shown below
 
-### Python Setup (Windows)
+### Python Setup (Windows) (NOTE: DO NOT USE WSL FOR SETTING UP YOUR DATABASE)
 
 1. **Set up a Python virtual environment**
    ```cmd
