@@ -1,0 +1,5 @@
+yolo_env/
+*.pyc
+__pycache__/
+models/*.pt
+weights/
