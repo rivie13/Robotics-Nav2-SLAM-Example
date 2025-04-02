@@ -16,10 +16,10 @@ namespace RosSharp.Control
         private ArticulationBody wA1;
         private ArticulationBody wA2;
 
-        public float maxLinearSpeed = 2; //  m/s
-        public float maxRotationalSpeed = 1;//
-        public float wheelRadius = 0.033f; //meters
-        public float trackWidth = 0.288f; // meters Distance between tyres
+        public float maxLinearSpeed = 10;            // m/s
+        public float maxRotationalSpeed = 1;
+        public float wheelRadius = 0.033f;          // [m]
+        public float trackWidth = 0.288f;           // [m] --> TODO: Change to the actual name used in Kinematics.
         public float forceLimit = 10;
         public float damping = 10;
 

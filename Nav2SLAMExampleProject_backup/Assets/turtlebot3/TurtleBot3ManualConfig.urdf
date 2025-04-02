@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="TurtleBot3ManualConfig">
+  <!-- Materials -->
+  <material name="light_black">
+    <color rgba="0.1698 0.169 0.169 1" />
+  </material>
+  <material name="dark">
+    <color rgba="0.3 0.3 0.3 1" />
+  </material>
+  <material name="hose_material">
+    <color rgba="0.0 0.5 0.0 1.0" /> <!-- Green color for the hose -->
+  </material>
+
+  <!-- Base Footprint -->
+  <link name="base_footprint" />
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="1.3729095459" />
+      <inertia ixx="0.00870027951896191" ixy="-4.75801425636746E-05" ixz="0.000111604596895631" iyy="0.00861953478306532" iyz="-3.54216444975464E-06" izz="0.0146127268671989" />
+    </inertial>
+    <visual>
+      <origin xyz="-0.064 0 0" />
+      <geometry>
+        <mesh filename="package://meshes/waffle_base.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="light_black">
+        <color rgba="0.1698 0.169 0.169 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.064 0 0.047" />
+      <geometry>
+        <box size="0.266 0.266 0.094" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Base Scan (Lidar) -->
+  <link name="base_scan">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0.1140000001" />
+      <inertia ixx="0.00100000004749745" ixy="0" ixz="0" iyy="0.00100000004749745" iyz="0" izz="0.00100000004749745" />
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://meshes/lds.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark">
+        <color rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.015 0 -0.0065" />
+      <geometry>
+        <cylinder length="0.0315" radius="0.055" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- IMU Link -->
+  <link name="imu_link" />
+
+  <!-- Right Wheel -->
+  <link name="wheel_right_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0.0284989402" />
+      <inertia ixx="1.11753870442044E-05" ixy="-4.32541016892607E-11" ixz="-5.93885829403007E-09" iyy="1.11926092358772E-05" iyz="-1.46103424497612E-11" izz="2.07125576707767E-05" />
+    </inertial>
+    <visual>
+      <origin rpy="-4.713185 0 0" />
+      <geometry>
+        <mesh filename="package://meshes/right_tire.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark">
+        <color rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="-4.713185 0 0" xyz="0 0 0" />
+      <geometry>
+        <cylinder length="0.018" radius="0.033" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Left Wheel -->
+  <link name="wheel_left_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0.0284989402" />
+      <inertia ixx="1.11753870442044E-05" ixy="-4.32541016892607E-11" ixz="-5.93885829403007E-09" iyy="1.11926092358772E-05" iyz="-1.46103424497612E-11" izz="2.07125576707767E-05" />
+    </inertial>
+    <visual>
+      <origin rpy="-4.713185 0 0" />
+      <geometry>
+        <mesh filename="package://meshes/left_tire.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark">
+        <color rgba="0.3 0.3 0.3 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="-4.713185 0 0" xyz="0 0 0" />
+      <geometry>
+        <cylinder length="0.018" radius="0.033" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Pump Hose (Lightweight Component for Water/Foam Dispensing) -->
+  <link name="pump_hose_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <mass value="0.05" /> <!-- Lightweight to minimize impact on dynamics -->
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <cylinder length="0.2" radius="0.01" /> <!-- Thin, long cylinder to represent a hose -->
+      </geometry>
+      <material name="hose_material">
+        <color rgba="0.0 0.5 0.0 1.0" /> <!-- Green color for the hose -->
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <geometry>
+        <cylinder length="0.2" radius="0.01" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Joints -->
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0 0 0.01" />
+    <parent link="base_footprint" />
+    <child link="base_link" />
+  </joint>
+  <joint name="scan_joint" type="fixed">
+    <origin xyz="-0.064 0 0.122" />
+    <parent link="base_link" />
+    <child link="base_scan" />
+  </joint>
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="0 0 0.068" />
+    <parent link="base_link" />
+    <child link="imu_link" />
+  </joint>
+  <joint name="wheel_right_joint" type="continuous">
+    <origin rpy="-1.57 0 0" xyz="0 -0.144 0.023" />
+    <parent link="base_link" />
+    <child link="wheel_right_link" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <joint name="wheel_left_joint" type="continuous">
+    <origin rpy="-1.57 0 0" xyz="0 0.144 0.023" />
+    <parent link="base_link" />
+    <child link="wheel_left_link" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <!-- Joint for Pump Hose -->
+  <joint name="pump_hose_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="pump_hose_link" />
+    <origin rpy="1.57 0 0" xyz="0.1 0 0.1" /> <!-- Positioned on top of base_link -->
+  </joint>
+
+  <!-- Gazebo Plugins (Preserved for Movement) -->
+  <gazebo reference="base_link">
+    <material>Gazebo/DarkGrey</material>
+  </gazebo>
+  <gazebo reference="wheel_left_link">
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="wheel_right_link">
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>500000.0</kp>
+    <kd>10.0</kd>
+    <minDepth>0.001</minDepth>
+    <maxVel>0.1</maxVel>
+    <fdir1>1 0 0</fdir1>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libgazebo_ros_diff_drive.so" name="turtlebot3_waffle_controller">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometrySource>world</odometrySource>
+      <publishOdomTF>true</publishOdomTF>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+      <publishWheelTF>false</publishWheelTF>
+      <publishTf>true</publishTf>
+      <publishWheelJointState>true</publishWheelJointState>
+      <legacyMode>false</legacyMode>
+      <updateRate>30</updateRate>
+      <leftJoint>wheel_left_joint</leftJoint>
+      <rightJoint>wheel_right_joint</rightJoint>
+      <wheelSeparation>0.287</wheelSeparation>
+      <wheelDiameter>0.066</wheelDiameter>
+      <wheelAcceleration>1</wheelAcceleration>
+      <wheelTorque>10</wheelTorque>
+      <rosDebugLevel>na</rosDebugLevel>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libgazebo_ros_imu.so" name="imu_plugin">
+      <alwaysOn>true</alwaysOn>
+      <bodyName>imu_link</bodyName>
+      <frameName>imu_link</frameName>
+      <topicName>imu</topicName>
+      <serviceName>imu_service</serviceName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <updateRate>200</updateRate>
+      <imu>
+        <noise>
+          <type>gaussian</type>
+          <rate>
+            <mean>0.0</mean>
+            <stddev>2e-4</stddev>
+            <bias_mean>0.0000075</bias_mean>
+            <bias_stddev>0.0000008</bias_stddev>
+          </rate>
+          <accel>
+            <mean>0.0</mean>
+            <stddev>1.7e-2</stddev>
+            <bias_mean>0.1</bias_mean>
+            <bias_stddev>0.001</bias_stddev>
+          </accel>
+        </noise>
+      </imu>
+    </plugin>
+  </gazebo>
+  <gazebo reference="base_scan">
+    <material>Gazebo/FlatBlack</material>
+    <sensor name="lds_lfcd_sensor" type="ray">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>5</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>0.0</min_angle>
+            <max_angle>6.28319</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.120</min>
+          <max>3.5</max>
+          <resolution>0.015</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin filename="libgazebo_ros_laser.so" name="gazebo_ros_lds_lfcd_controller">
+        <topicName>scan</topicName>
+        <frameName>base_scan</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+</robot>
