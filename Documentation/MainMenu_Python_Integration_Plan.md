@@ -35,7 +35,6 @@ This document outlines a streamlined plan to add a main menu to the Unity projec
 
 ### 1. Configuration System
 - Create SimulationConfig scriptable object to store:
-  - ROS connection parameters
   - Robot configuration
   - Environment settings
 - Implement JSON serialization for configs
