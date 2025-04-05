@@ -59,7 +59,7 @@ If you've forgotten your PostgreSQL password, you have two options:
 1. **Set up a Python virtual environment**
    ```cmd
    # Create a virtual environment in the database directory
-   cd C:\Users\rivie\Robotics-Nav2-SLAM-Example\database
+   cd C:\Users\mikeg\OneDrive\Desktop\Robotics-Nav2-SLAM-Example\database
    python -m venv venv
    
    # Activate the virtual environment
