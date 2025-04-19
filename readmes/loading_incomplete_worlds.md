@@ -4,6 +4,7 @@ https://assetstore.unity.com/packages/3d/characters/humanoids/humans/beard-man-i
 https://assetstore.unity.com/packages/3d/environments/urban/russian-buildings-pack-113375
 https://assetstore.unity.com/packages/2d/textures-materials/water/simple-water-shader-urp-191449
 https://assetstore.unity.com/packages/3d/props/weapons/yughues-free-bombs-13147
+https://assetstore.unity.com/packages/3d/vehicles/air/simple-drone-190684
 
 Afterwards, in unity:
 window -> package manager -> 
