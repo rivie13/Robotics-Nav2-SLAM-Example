@@ -4,13 +4,13 @@ using UnityEngine;
 /// <summary>
 ///     A simple free camera to be added to a Unity game object.
 ///     Keys:
-///     wasd / arrows	- movement
-///     q/e 			- down/up (local space)
-///     r/f 			- up/down (world space)
-///     pageup/pagedown	- up/down (world space)
-///     hold shift		- enable fast movement mode
-///     right mouse  	- enable free look
-///     mouse			- free look / rotation
+///     ijkl            - movement (replaced wasd to avoid conflict with robot teleop)
+///     q/e             - down/up (local space)
+///     r/f             - up/down (world space)
+///     pageup/pagedown - up/down (world space)
+///     hold shift      - enable fast movement mode
+///     right mouse     - enable free look
+///     mouse           - free look / rotation
 /// </summary>
 public class FreeCam : MonoBehaviour
 {
@@ -21,7 +21,7 @@ public class FreeCam : MonoBehaviour
     float m_MovementSpeed = 10f;
 
     /// <summary>
-    ///     Speed of camera movement when shift is held down,
+    ///     Speed of camera movement when shift is held down.
     /// </summary>
     [SerializeField]
     float m_FastMovementSpeed = 100f;
@@ -54,16 +54,17 @@ public class FreeCam : MonoBehaviour
         var fastMode = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
         var movementSpeed = fastMode ? m_FastMovementSpeed : m_MovementSpeed;
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        // Use IJKL for camera movement instead of WASD
+        if (Input.GetKey(KeyCode.J)) // Left (replaced A)
             transform.position = transform.position + -transform.right * movementSpeed * Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.L)) // Right (replaced D)
             transform.position = transform.position + transform.right * movementSpeed * Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.I)) // Forward (replaced W)
             transform.position = transform.position + transform.forward * movementSpeed * Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.K)) // Backward (replaced S)
             transform.position = transform.position + -transform.forward * movementSpeed * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.Q))
@@ -94,7 +95,8 @@ public class FreeCam : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
             StartLooking();
-        else if (Input.GetKeyUp(KeyCode.Mouse1)) StopLooking();
+        else if (Input.GetKeyUp(KeyCode.Mouse1))
+            StopLooking();
     }
 
     void OnDisable()

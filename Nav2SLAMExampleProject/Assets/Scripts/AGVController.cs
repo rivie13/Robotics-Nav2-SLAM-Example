@@ -2,63 +2,118 @@ using UnityEngine;
 using Unity.Robotics.ROSTCPConnector;
 using RosMessageTypes.Geometry;
 using Unity.Robotics.UrdfImporter.Control;
+using System.Collections.Generic;
 
 namespace RosSharp.Control
 {
-    public enum ControlMode { Keyboard, ROS};
-
     public class AGVController : MonoBehaviour
     {
         public GameObject wheel1;
         public GameObject wheel2;
-        public ControlMode mode = ControlMode.ROS;
 
         private ArticulationBody wA1;
         private ArticulationBody wA2;
 
-        public float maxLinearSpeed = 2; //  m/s
-        public float maxRotationalSpeed = 1;//
-        public float wheelRadius = 0.033f; //meters
-        public float trackWidth = 0.288f; // meters Distance between tyres
+        public float maxLinearSpeed = 0.3f;
+        public float wheelRadius = 0.033f;
+        public float trackWidth = 0.288f;
         public float forceLimit = 10;
         public float damping = 10;
+        public float navigationSpeed = 0.1f;
+        public float navigationOffset = 0.35f; //changed from 1.0f. Robot way way too far visually from the warehouse fire
 
-        public float ROSTimeout = 0.5f;
-        private float lastCmdReceived = 0f;
+        private Transform nozzle_ref;
+        private Nozzle nozzle_obj;
 
-        ROSConnection ros;
-        private RotationDirection direction;
-        private float rosLinear = 0f;
-        private float rosAngular = 0f;
+        private ROSConnection ros;
+        private Queue<Vector3> firePositions = new Queue<Vector3>();
+        private Vector3 currentGoal;
+        private bool hasGoal = false;
+        //private bool inFireTrigger = false;
+
 
         void Start()
         {
             wA1 = wheel1.GetComponent<ArticulationBody>();
             wA2 = wheel2.GetComponent<ArticulationBody>();
+            if (wA1 == null || wA2 == null) Debug.LogError("Wheels missing ArticulationBody");
+
             SetParameters(wA1);
             SetParameters(wA2);
+            nozzle_ref = GameObject.Find("Nozzle").transform;
+            nozzle_obj = nozzle_ref.GetComponent<Nozzle>();
+            if (nozzle_ref == null) Debug.LogError("Nozzle not found");
+            if (nozzle_obj == null) Debug.LogError("Nozzle Object not found");
+
             ros = ROSConnection.GetOrCreateInstance();
-            ros.Subscribe<TwistMsg>("cmd_vel", ReceiveROSCmd);
+            ros.Subscribe<Vector3Msg>("/fire_location", FireLocationCallback);
+            Debug.Log("AGVController initialized");
         }
 
-        void ReceiveROSCmd(TwistMsg cmdVel)
+        void FireLocationCallback(Vector3Msg msg)
         {
-            rosLinear = (float)cmdVel.linear.x;
-            rosAngular = (float)cmdVel.angular.z;
-            lastCmdReceived = Time.time;
+            //robots stops a small distance from the warehouse fire to avoid colliding w/ its sphere collider 
+            Vector3 firePos = new Vector3((float)msg.x + navigationOffset, (float)msg.y, (float)msg.z + navigationOffset);
+            firePositions.Enqueue(firePos);
+            Debug.Log($"Fire location: {firePos}");
+
+            if (!hasGoal)
+            {
+                ProcessNextGoal();
+            }
+
+
+        }
+
+        void ProcessNextGoal()
+        {
+            if (firePositions.Count == 0)
+            {
+                hasGoal = false;
+                Debug.Log("No more fires");
+                return;
+            }
+            currentGoal = firePositions.Dequeue();
+            Debug.Log($"Next Goal Coordinates = ( {currentGoal.x}, {currentGoal.y}, {currentGoal.z}) ");
+            hasGoal = true;
+            //inFireTrigger = false;
+            Debug.Log($"Navigating to: {currentGoal}");
         }
 
         void FixedUpdate()
         {
-            if (mode == ControlMode.Keyboard)
+            while (firePositions.Count > 0)
             {
-                KeyBoardUpdate();
+                if (hasGoal == false) //changed from !hasGoal
+                {
+                    RobotInput(0f);
+                    return;
+                }
+
+                Vector3 direction = currentGoal - transform.position;
+                direction.y = 0;
+                float distance = direction.magnitude;
+
+                if (distance > 0.1f)
+                {
+                    Vector3 moveStep = direction.normalized * navigationSpeed * Time.fixedDeltaTime;
+                    transform.position += moveStep;
+                    RobotInput(navigationSpeed);
+                    //Debug.Log($"Moving to: {currentGoal}, Distance: {distance}");
+                }
+                else
+                {
+                    RobotInput(0f);
+                    Debug.Log("Reached goal, extinguishing");
+                    nozzle_obj.Water();
+                    hasGoal = true;//testing this
+                    //ProcessNextGoal();
+                }
             }
-            else if (mode == ControlMode.ROS)
-            {
-                ROSUpdate();
-            }     
+
+
         }
+
 
         private void SetParameters(ArticulationBody joint)
         {
@@ -68,90 +123,20 @@ namespace RosSharp.Control
             joint.xDrive = drive;
         }
 
-        private void SetSpeed(ArticulationBody joint, float wheelSpeed = float.NaN)
+        private void SetSpeed(ArticulationBody joint, float wheelSpeed)
         {
             ArticulationDrive drive = joint.xDrive;
-            if (float.IsNaN(wheelSpeed))
-            {
-                drive.targetVelocity = ((2 * maxLinearSpeed) / wheelRadius) * Mathf.Rad2Deg * (int)direction;
-            }
-            else
-            {
-                drive.targetVelocity = wheelSpeed;
-            }
+            drive.targetVelocity = wheelSpeed;
             joint.xDrive = drive;
         }
 
-        private void KeyBoardUpdate()
+        private void RobotInput(float speed)
         {
-            float moveDirection = Input.GetAxis("Vertical");
-            float inputSpeed;
-            float inputRotationSpeed;
-            if (moveDirection > 0)
-            {
-                inputSpeed = maxLinearSpeed;
-            }
-            else if (moveDirection < 0)
-            {
-                inputSpeed = maxLinearSpeed * -1;
-            }
-            else
-            {
-                inputSpeed = 0;
-            }
-
-            float turnDirction = Input.GetAxis("Horizontal");
-            if (turnDirction > 0)
-            {
-                inputRotationSpeed = maxRotationalSpeed;
-            }
-            else if (turnDirction < 0)
-            {
-                inputRotationSpeed = maxRotationalSpeed * -1;
-            }
-            else
-            {
-                inputRotationSpeed = 0;
-            }
-            RobotInput(inputSpeed, inputRotationSpeed);
-        }
-
-
-        private void ROSUpdate()
-        {
-            if (Time.time - lastCmdReceived > ROSTimeout)
-            {
-                rosLinear = 0f;
-                rosAngular = 0f;
-            }
-            RobotInput(rosLinear, -rosAngular);
-        }
-
-        private void RobotInput(float speed, float rotSpeed) // m/s and rad/s
-        {
-            if (speed > maxLinearSpeed)
-            {
-                speed = maxLinearSpeed;
-            }
-            if (rotSpeed > maxRotationalSpeed)
-            {
-                rotSpeed = maxRotationalSpeed;
-            }
-            float wheel1Rotation = (speed / wheelRadius);
-            float wheel2Rotation = wheel1Rotation;
-            float wheelSpeedDiff = ((rotSpeed * trackWidth) / wheelRadius);
-            if (rotSpeed != 0)
-            {
-                wheel1Rotation = (wheel1Rotation + (wheelSpeedDiff / 1)) * Mathf.Rad2Deg;
-                wheel2Rotation = (wheel2Rotation - (wheelSpeedDiff / 1)) * Mathf.Rad2Deg;
-            }
-            else
-            {
-                wheel1Rotation *= Mathf.Rad2Deg;
-                wheel2Rotation *= Mathf.Rad2Deg;
-            }
-            SetSpeed(wA1, wheel1Rotation);
-            SetSpeed(wA2, wheel2Rotation);
+            if (speed > maxLinearSpeed) speed = maxLinearSpeed;
+            float wheelRotation = (speed / wheelRadius) * Mathf.Rad2Deg;
+            SetSpeed(wA1, wheelRotation);
+            SetSpeed(wA2, wheelRotation);
+            //Debug.Log($"Speed: {speed}, Wheel rotation: {wheelRotation}");
         }
     }
 }
