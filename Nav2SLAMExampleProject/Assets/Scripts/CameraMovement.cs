@@ -43,8 +43,8 @@ public class CameraMovement : MonoBehaviour
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         if (scroll != 0f)
         {
-            Vector3 direction = transform.forward;
-            Vector3 newPosition = transform.position + direction * scroll * zoomSpeed;
+            Vector3 direction = transform.up;
+            Vector3 newPosition = transform.position - direction * scroll * zoomSpeed;
 
             // Clamp zoom (based on height for top-down)
             float clampedY = Mathf.Clamp(newPosition.y, minZoom, maxZoom);
