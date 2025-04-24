@@ -5,6 +5,10 @@ using System.Linq;
 using Unity.Robotics.ROSTCPConnector;
 using UnityEditor.WindowsStandalone;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
+
+// https://www.geeksforgeeks.org/sorting-queue-without-extra-space/
+
 
 public class FireLocations : MonoBehaviour
 {
@@ -13,10 +17,12 @@ public class FireLocations : MonoBehaviour
     private Vector3Msg vec3msg;
     private List<GameObject> warehouse_fires;
     private static int count_warehousefires;
-
+   
     private void Awake()
     {
         warehouse_fires = GameObject.FindGameObjectsWithTag("Fire").ToList();
+
+        
     }
 
     void Start()
@@ -35,4 +41,8 @@ public class FireLocations : MonoBehaviour
             Debug.Log("Publishing fire positons to topic names = " + fire_pos_topic);
         }
     }
+
+    
+
+
 }

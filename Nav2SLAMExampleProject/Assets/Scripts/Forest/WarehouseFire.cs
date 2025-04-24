@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class WarehouseFire : MonoBehaviour
 {
@@ -7,14 +8,14 @@ public class WarehouseFire : MonoBehaviour
 
     private void Awake()
     {
-        
-        //flamePrefab = GetComponent<ParticleSystem>();
+
+        flamePrefab = GetComponent<ParticleSystem>();
         triggerCollider = gameObject.AddComponent<SphereCollider>();
+        Assert.IsNotNull(triggerCollider);
+        Assert.IsNotNull(flamePrefab);
         triggerCollider.isTrigger = true;
         triggerCollider.radius = 3.5f;
-
         
-        //if (flamePrefab == null) Debug.LogError("Flame ParticleSystem not found!", this);
     }
 
     public void ExtinguishFire()
@@ -24,7 +25,7 @@ public class WarehouseFire : MonoBehaviour
         {
             flamePrefab.Stop(true, ParticleSystemStopBehavior.StopEmitting);
             float flameLifetime = flamePrefab.main.startLifetime.constantMax;
-            Destroy(gameObject, flameLifetime); 
+            Destroy(gameObject, flameLifetime);
         }
     }
 }
