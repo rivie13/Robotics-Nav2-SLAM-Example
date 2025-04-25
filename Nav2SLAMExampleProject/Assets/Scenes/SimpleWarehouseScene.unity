@@ -2164,13 +2164,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheel1: {fileID: 962852625}
   wheel2: {fileID: 1999367709}
-  maxLinearSpeed: 0.75
+  maxLinearSpeed: 0.8
   wheelRadius: 0.033
   trackWidth: 0.288
   forceLimit: 10
   damping: 10
-  navigationSpeed: 0.5
-  navigationOffset: 0.025
+  navigationSpeed: 0.4
+  navigationOffset: 0.15
 --- !u!1001 &136304589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21047,13 +21047,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheel1: {fileID: 962852625}
   wheel2: {fileID: 1999367709}
-  maxLinearSpeed: 0.75
+  maxLinearSpeed: 0.8
   wheelRadius: 0.033
   trackWidth: 0.288
   forceLimit: 10
   damping: 10
-  navigationSpeed: 0.5
-  navigationOffset: 0.025
+  navigationSpeed: 0.4
+  navigationOffset: 0.15
 --- !u!1001 &1303883554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36587,12 +36587,24 @@ PrefabInstance:
       value: FirefighterRobot
       objectReference: {fileID: 0}
     - target: {fileID: 5577231280523347575, guid: 44db71931b83ade44a964856aed2542f, type: 3}
+      propertyPath: damping
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577231280523347575, guid: 44db71931b83ade44a964856aed2542f, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5577231280523347575, guid: 44db71931b83ade44a964856aed2542f, type: 3}
+      propertyPath: turnSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577231280523347575, guid: 44db71931b83ade44a964856aed2542f, type: 3}
+      propertyPath: maxLinearSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577231280523347575, guid: 44db71931b83ade44a964856aed2542f, type: 3}
       propertyPath: navigationSpeed
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5577231280523347575, guid: 44db71931b83ade44a964856aed2542f, type: 3}
       propertyPath: navigationOffset

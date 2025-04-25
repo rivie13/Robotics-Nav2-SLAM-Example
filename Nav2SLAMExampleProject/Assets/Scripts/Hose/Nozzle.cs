@@ -13,7 +13,7 @@ public class Nozzle : MonoBehaviour
     {
         hose_ref = this.gameObject.GetComponentInParent<Transform>();
         Assert.IsNotNull(hose_ref);
-        Debug.Log("Inside Nozzle Script. Hose Ref Parent Prefab = " + hose_ref.name.ToString());
+        //Debug.Log("Inside Nozzle Script. Hose Ref Parent Prefab = " + hose_ref.name.ToString());
         
     }
     

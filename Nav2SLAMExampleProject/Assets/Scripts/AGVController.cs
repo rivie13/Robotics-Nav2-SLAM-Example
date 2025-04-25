@@ -13,18 +13,19 @@ namespace RosSharp.Control
 
         private ArticulationBody wA1;
         private ArticulationBody wA2;
-
-        public float maxLinearSpeed = 0.8f;
+    
+        public float maxLinearSpeed = 0.8f; //from 0.8
         public float wheelRadius = 0.033f;
         public float trackWidth = 0.288f;
-        public float forceLimit = 10;
-        public float damping = 10;
-        public float navigationSpeed = 0.3f;
-        public float navigationOffset = 1.0f;
+
+        public float forceLimit = 10; // from 10
+        public float damping = 10; // from 10
+        public float navigationSpeed = 0.3f; // from 0.4
+        public float navigationOffset = 0.15f;//from 1.0f
+
 
         private Transform nozzle_ref;
         private Nozzle nozzle_obj;
-    
 
         private ROSConnection ros;
         private Queue<Vector3> firePositions = new Queue<Vector3>();
@@ -44,18 +45,15 @@ namespace RosSharp.Control
             nozzle_obj = nozzle_ref.GetComponent<Nozzle>();
             ros = ROSConnection.GetOrCreateInstance();
             ros.Subscribe<Vector3Msg>("/fire_location", FireLocationCallback);
-           // Debug.Log("AGVController initialized");
+            
         }
 
+        //robots stops a small distance from the warehouse fire to avoid colliding w/ its sphere collider
         void FireLocationCallback(Vector3Msg msg)
         {
-            //int count = 0;
-            //robots stops a small distance from the warehouse fire to avoid colliding w/ its sphere collider 
             Vector3 firePos = new Vector3((float)msg.x + navigationOffset, (float)msg.y, (float)msg.z + navigationOffset);
             firePositions.Enqueue(firePos);
-            //count++;
-            //if (count == firePositions.Count){ SortedQueue.sortQueue(ref firePositions);}
-
+ 
             if (!hasGoal)
             {
                 ProcessNextGoal();
@@ -73,10 +71,12 @@ namespace RosSharp.Control
 
             currentGoal = firePositions.Dequeue();
             hasGoal = true;
-            //inFireTrigger = false;
-            //Debug.Log($"Navigating to: {currentGoal}");
+            //I want to execute the code in FixedUpdate() again, since the robot does not TURN and head towards the next fire!
+            Debug.Log($"Navigating to: {currentGoal}");
         }
 
+
+       
         void FixedUpdate()
         {
             if (!hasGoal)
@@ -89,7 +89,7 @@ namespace RosSharp.Control
             direction.y = 0;
             float distance = direction.magnitude;
 
-            if (distance > 0.075f)//changed from 0.1f. Messing w/ this value and other values 
+            if (distance > 0.075f)
             {
                 Vector3 moveStep = direction.normalized * navigationSpeed * Time.fixedDeltaTime;
                 transform.position += moveStep;
@@ -102,13 +102,20 @@ namespace RosSharp.Control
                 Debug.Log("Reached goal, extinguishing");
                 nozzle_obj.Water();
                 Debug.Log("Finished Extinguishing!...");
-                //hasGoal = true; testing this
-                ProcessNextGoal();//robot continues forward and doesn't turn
+                ProcessNextGoal(); // Move to next fire ideally. Currently robot extinguishes 1 fire(the same fire), then moves forward infinitely
             }
-            
+        }
+        
+     
+        private void RobotInput(float speed)
+        {
+            if (speed > maxLinearSpeed) speed = maxLinearSpeed;
+            float wheelRotation = (speed / wheelRadius) * Mathf.Rad2Deg;
+            SetSpeed(wA1, wheelRotation);
+            SetSpeed(wA2, wheelRotation);
         }
 
-
+   
         private void SetParameters(ArticulationBody joint)
         {
             ArticulationDrive drive = joint.xDrive;
@@ -124,13 +131,6 @@ namespace RosSharp.Control
             joint.xDrive = drive;
         }
 
-        private void RobotInput(float speed)
-        {
-            if (speed > maxLinearSpeed) speed = maxLinearSpeed;
-            float wheelRotation = (speed / wheelRadius) * Mathf.Rad2Deg;
-            SetSpeed(wA1, wheelRotation);
-            SetSpeed(wA2, wheelRotation);
-            //Debug.Log($"Speed: {speed}, Wheel rotation: {wheelRotation}");
-        }
+      
     }
 }

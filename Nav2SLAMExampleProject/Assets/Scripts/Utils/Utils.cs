@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SortedQueue
+public class Utils
 {
     public static int minIndex(ref Queue<Vector3> q, int sortedIndex)
     {
