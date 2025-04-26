@@ -19,8 +19,7 @@ public class CameraCapture : MonoBehaviour
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<ImageMsg>(camera_topic);
         ros.Subscribe<StringMsg>(yolo_topic_classification, ClassificationCallback);
-       //Debug.Log("SUBSCRIBED TO YOLO TOPIC CLASSIFICATION "+yolo_topic_classification);
-       //Debug.Log("PUBLISHING IMAGE MSG TO ROS2" + camera_topic);
+       
 
     }
 

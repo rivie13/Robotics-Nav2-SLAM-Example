@@ -2150,6 +2150,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 436977342279479669, guid: 44db71931b83ade44a964856aed2542f, type: 3}
   m_PrefabInstance: {fileID: 3468550062865469253}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &131428326 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 436977342279479666, guid: 44db71931b83ade44a964856aed2542f, type: 3}
+  m_PrefabInstance: {fileID: 3468550062865469253}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &131428330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2157,7 +2162,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131428325}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8293e12d0c46eab409c8b3a4d4c9b9b4, type: 3}
   m_Name: 
@@ -2167,10 +2172,18 @@ MonoBehaviour:
   maxLinearSpeed: 0.8
   wheelRadius: 0.033
   trackWidth: 0.288
+  maxRotationalSpeed: 1
   forceLimit: 10
   damping: 10
   navigationSpeed: 0.4
   navigationOffset: 0.15
+  bf: {fileID: 131428326}
+  vision_transform_camera: {fileID: 953178271}
+  avoidDistance: 1.5
+  repelForce: 2
+  rayDistance: 1
+  rayColor: {r: 1, g: 0, b: 0, a: 1}
+  waterPrefab: {fileID: 5230192137310776637, guid: 7798fa4d011f88f44b93b0e298b96fc7, type: 3}
 --- !u!1001 &136304589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10941,6 +10954,10 @@ PrefabInstance:
     - target: {fileID: 8005220795154943950, guid: 2df6b7a2112005f4081ba1d062a15535, type: 3}
       propertyPath: m_Name
       value: Flame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005220795154943950, guid: 2df6b7a2112005f4081ba1d062a15535, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8005220795154943950, guid: 2df6b7a2112005f4081ba1d062a15535, type: 3}
       propertyPath: m_TagString
@@ -21019,6 +21036,10 @@ PrefabInstance:
       value: Flame (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8005220795154943950, guid: 2df6b7a2112005f4081ba1d062a15535, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005220795154943950, guid: 2df6b7a2112005f4081ba1d062a15535, type: 3}
       propertyPath: m_TagString
       value: Fire
       objectReference: {fileID: 0}
@@ -21050,10 +21071,18 @@ MonoBehaviour:
   maxLinearSpeed: 0.8
   wheelRadius: 0.033
   trackWidth: 0.288
+  maxRotationalSpeed: 1
   forceLimit: 10
   damping: 10
   navigationSpeed: 0.4
   navigationOffset: 0.15
+  bf: {fileID: 0}
+  vision_transform_camera: {fileID: 0}
+  avoidDistance: 1.5
+  repelForce: 2
+  rayDistance: 1
+  rayColor: {r: 1, g: 0, b: 0, a: 1}
+  waterPrefab: {fileID: 0}
 --- !u!1001 &1303883554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25590,6 +25619,10 @@ PrefabInstance:
       value: Flame (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8005220795154943950, guid: 2df6b7a2112005f4081ba1d062a15535, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005220795154943950, guid: 2df6b7a2112005f4081ba1d062a15535, type: 3}
       propertyPath: m_TagString
       value: Fire
       objectReference: {fileID: 0}
@@ -27187,6 +27220,10 @@ PrefabInstance:
     - target: {fileID: 8005220795154943950, guid: 2df6b7a2112005f4081ba1d062a15535, type: 3}
       propertyPath: m_Name
       value: Flame (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005220795154943950, guid: 2df6b7a2112005f4081ba1d062a15535, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8005220795154943950, guid: 2df6b7a2112005f4081ba1d062a15535, type: 3}
       propertyPath: m_TagString
@@ -36294,6 +36331,10 @@ PrefabInstance:
       value: Flame (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8005220795154943950, guid: 2df6b7a2112005f4081ba1d062a15535, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005220795154943950, guid: 2df6b7a2112005f4081ba1d062a15535, type: 3}
       propertyPath: m_TagString
       value: Fire
       objectReference: {fileID: 0}
@@ -36592,7 +36633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5577231280523347575, guid: 44db71931b83ade44a964856aed2542f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5577231280523347575, guid: 44db71931b83ade44a964856aed2542f, type: 3}
       propertyPath: turnSpeed
@@ -36604,7 +36645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5577231280523347575, guid: 44db71931b83ade44a964856aed2542f, type: 3}
       propertyPath: navigationSpeed
-      value: 0.4
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 5577231280523347575, guid: 44db71931b83ade44a964856aed2542f, type: 3}
       propertyPath: navigationOffset

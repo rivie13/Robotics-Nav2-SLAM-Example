@@ -1,53 +1,40 @@
 using UnityEngine;
-using UnityEngine.Assertions;
 
 public class Nozzle : MonoBehaviour
 {
-    
-    public float rayDistance = 200f;
+    public float rayDistance = 1f;
     public Color rayColor = Color.red;
     [SerializeField] private ParticleSystem waterPrefab;
-    Transform hose_ref;
 
-    private void Start()
+    public void Water(Vector3 firePosition)
     {
-        hose_ref = this.gameObject.GetComponentInParent<Transform>();
-        Assert.IsNotNull(hose_ref);
-        //Debug.Log("Inside Nozzle Script. Hose Ref Parent Prefab = " + hose_ref.name.ToString());
-        
-    }
-    
-    public void Water()
-    {
-        
         RaycastHit hit;
         Vector3 rayOrigin = transform.position;
-        Vector3 rayDirection = Quaternion.Euler(90, 0, 0) * transform.forward;
+        // Calculate direction from nozzle to fire position
+        Vector3 rayDirection = (firePosition - rayOrigin).normalized;
 
         Debug.DrawRay(rayOrigin, rayDirection * rayDistance, rayColor, 50f);
-        if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayDistance))
+        int fireLayerMask = LayerMask.GetMask("FireLayer");
+        if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayDistance, fireLayerMask))
         {
+            Debug.Log($"Raycast hit: {hit.transform.name} at {hit.point}, distance: {hit.distance}");
             WarehouseFire target = hit.transform.GetComponent<WarehouseFire>();
             if (target)
             {
-                Debug.Log("Extinguishing " + target.name.ToString());
-                Quaternion waterRotation = Quaternion.LookRotation(rayDirection);
-                ParticleSystem waterEffects = Instantiate(waterPrefab, hose_ref.position, waterRotation);
+                Debug.Log($"Extinguishing {target.name}");
+                ParticleSystem waterEffects = Instantiate(waterPrefab, transform.position, Quaternion.LookRotation(rayDirection));
                 float waterLifetime = waterPrefab.main.startLifetime.constantMax;
                 Destroy(waterEffects.gameObject, waterLifetime);
                 target.ExtinguishFire();
             }
             else
             {
-                Debug.Log($"Raycast hit: {hit.transform.name}");
+                Debug.Log("Hit something but not WarehouseFire");
             }
         }
+        else
+        {
+            Debug.Log($"Raycast missed. Origin: {rayOrigin}, Fire: {firePosition}, Direction: {rayDirection}");
+        }
     }
-    
-    
-
-  
-
-
-
 }
