@@ -13,6 +13,7 @@ public class FireLocations : MonoBehaviour
     private ROSConnection ros;
     private string fire_pos_topic = "/fire_location";
     private string fire_count_topic = "/total_warehouse_fires";
+    private string stop_robot_movement = "/stop_robot";
     private Vector3Msg vec3msg;
     private List<GameObject> warehouse_fires;
     private static int total_warehouse_fires;
@@ -28,7 +29,8 @@ public class FireLocations : MonoBehaviour
     {
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<Vector3Msg>(fire_pos_topic);
-        ros.RegisterPublisher<Int32Msg>(fire_count_topic); // Register publisher for Int32Msg
+        ros.RegisterPublisher<Int32Msg>(fire_count_topic);
+        ros.RegisterPublisher<StringMsg>(stop_robot_movement); // all fires put out. Command robot to stop moving
 
         Int32Msg countMsg = new Int32Msg
         {
@@ -43,5 +45,26 @@ public class FireLocations : MonoBehaviour
             ros.Publish(fire_pos_topic, vec3msg);
             Debug.Log($"Publishing fire pos: {vec3msg.x}, {vec3msg.y},{vec3msg.z}");
         }
+
+        StringMsg stringMsg = new StringMsg
+        {
+            data = "NO MORE FIRES DETECTED...MISSION ACCOMPLISHED!"
+        };
     }
+
+    void Update()
+    {
+        warehouse_fires.RemoveAll(fire => fire == null); 
+        if (warehouse_fires.Count == 0)
+        {
+            StringMsg stringMsg = new StringMsg
+            {
+                data = "NO MORE FIRES DETECTED...MISSION ACCOMPLISHED!"
+            };
+            ros.Publish(stop_robot_movement, stringMsg);
+            enabled = false; // Disable further updates
+        }
+    }
+
+
 }

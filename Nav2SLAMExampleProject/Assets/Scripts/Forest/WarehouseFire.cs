@@ -22,13 +22,5 @@ public class WarehouseFire : MonoBehaviour
     {
         Debug.Log("EXTINGUISHING " + this.gameObject.name.ToString());
         Destroy(this.gameObject);
-        /*
-        if (flamePrefab)
-        {
-            flamePrefab.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-            float flameLifetime = flamePrefab.main.startLifetime.constantMax;
-            Destroy(gameObject, flameLifetime);
-        }
-        */
     }
 }

@@ -1,0 +1,36 @@
+[1.458s] Invoking command in '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/src/vision_transform': PYTHONPATH=/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vision_transform build --build-base /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/build install --record /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/install.log --single-version-externally-managed install_data
+[1.927s] running egg_info
+[1.930s] creating ../../build/vision_transform/vision_transform.egg-info
+[1.932s] writing ../../build/vision_transform/vision_transform.egg-info/PKG-INFO
+[1.964s] writing dependency_links to ../../build/vision_transform/vision_transform.egg-info/dependency_links.txt
+[1.968s] writing entry points to ../../build/vision_transform/vision_transform.egg-info/entry_points.txt
+[1.992s] writing requirements to ../../build/vision_transform/vision_transform.egg-info/requires.txt
+[2.013s] writing top-level names to ../../build/vision_transform/vision_transform.egg-info/top_level.txt
+[2.030s] writing manifest file '../../build/vision_transform/vision_transform.egg-info/SOURCES.txt'
+[2.057s] reading manifest file '../../build/vision_transform/vision_transform.egg-info/SOURCES.txt'
+[2.098s] writing manifest file '../../build/vision_transform/vision_transform.egg-info/SOURCES.txt'
+[2.101s] running build
+[2.101s] running build_py
+[2.107s] creating /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/build
+[2.109s] creating /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/build/lib
+[2.116s] creating /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/build/lib/vision_transform
+[2.125s] copying vision_transform/yolo_node.py -> /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/build/lib/vision_transform
+[2.172s] copying vision_transform/__init__.py -> /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/build/lib/vision_transform
+[2.183s] running install
+[2.188s] running install_lib
+[2.205s] creating /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/python3.10/site-packages/vision_transform
+[2.222s] copying /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/build/lib/vision_transform/yolo_node.py -> /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/python3.10/site-packages/vision_transform
+[2.256s] copying /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/build/lib/vision_transform/__init__.py -> /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/python3.10/site-packages/vision_transform
+[2.286s] byte-compiling /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/python3.10/site-packages/vision_transform/yolo_node.py to yolo_node.cpython-310.pyc
+[2.318s] byte-compiling /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/python3.10/site-packages/vision_transform/__init__.py to __init__.cpython-310.pyc
+[2.365s] running install_data
+[2.370s] creating /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/share/ament_index
+[2.372s] creating /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/share/ament_index/resource_index
+[2.374s] creating /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/share/ament_index/resource_index/packages
+[2.381s] copying resource/vision_transform -> /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/share/ament_index/resource_index/packages
+[2.400s] copying package.xml -> /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/share/vision_transform
+[2.444s] running install_egg_info
+[2.455s] Copying ../../build/vision_transform/vision_transform.egg-info to /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/python3.10/site-packages/vision_transform-0.0.0-py3.10.egg-info
+[2.628s] running install_scripts
+[2.672s] writing list of installed files to '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/install.log'
+[2.692s] Invoked command in '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/src/vision_transform' returned '0': PYTHONPATH=/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/vision_transform build --build-base /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/build install --record /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/install.log --single-version-externally-managed install_data
