@@ -15462,27 +15462,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 953178271}
-  renderTexture: {fileID: 8400000, guid: 446df029cc46f474993c18accfdf9eeb, type: 2}
   robotId: robot1
 --- !u!20 &953178271 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1377022227752924429, guid: 44db71931b83ade44a964856aed2542f, type: 3}
   m_PrefabInstance: {fileID: 3468550062865469253}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &953178272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 953178266}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 056dd769a3ce6a040b9f355c30c02053, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetCamera: {fileID: 953178271}
-  renderTexture: {fileID: 8400000, guid: 446df029cc46f474993c18accfdf9eeb, type: 2}
 --- !u!1001 &955973834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21513,7 +21498,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 1299289371}
-  renderTexture: {fileID: 8400000, guid: 446df029cc46f474993c18accfdf9eeb, type: 2}
   robotId: robot3
 --- !u!64 &1299289382
 MeshCollider:
@@ -24842,7 +24826,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 1459542107}
-  renderTexture: {fileID: 8400000, guid: 446df029cc46f474993c18accfdf9eeb, type: 2}
   robotId: robot2
 --- !u!64 &1459542118
 MeshCollider:

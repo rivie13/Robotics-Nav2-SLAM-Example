@@ -59,6 +59,8 @@ namespace RosSharp.Control
         private static readonly object fireAssignmentLock = new object();
         private static bool initialAssignmentDone = false;
 
+        private string distanceTopic;
+
         void Awake()
         {
             string name = gameObject.name;
@@ -99,7 +101,12 @@ namespace RosSharp.Control
             ros.Subscribe<Vector3Msg>($"/{robotId}/fire_location", FireLocationCallback);
             ros.Subscribe<StringMsg>($"/{robotId}/stop_robot", StopRobotCallback);
             ros.Subscribe<StringMsg>($"/{robotId}/yolo/classification", YoloClassificationCallback);
-            Debug.Log($"{robotId} subscribed to /{robotId}/fire_location, stop_robot, yolo/classification");
+
+            distanceTopic = $"/{robotId}/dist_pub";
+            ros.RegisterPublisher<Float32Msg>(distanceTopic);
+            Float32Msg initialMsg = new Float32Msg { data = 0f };
+            ros.Publish(distanceTopic, initialMsg);
+
 
             gameObject.tag = "robot";
             otherRobots = GameObject.FindGameObjectsWithTag("robot");
@@ -126,7 +133,7 @@ namespace RosSharp.Control
                     GameObject[] fires = GameObject.FindGameObjectsWithTag("Fire");
                     availableFirePositions.AddRange(System.Array.ConvertAll(fires, fire => fire.transform.position));
                     initialAssignmentDone = true;
-                    Debug.Log($"Initialized availableFirePositions with {availableFirePositions.Count} fires");
+                    //Debug.Log($"Initialized availableFirePositions with {availableFirePositions.Count} fires");
                 }
             }
 
@@ -138,7 +145,7 @@ namespace RosSharp.Control
         void YoloClassificationCallback(StringMsg msg)
         {
             yoloFireDetected = (msg.data == "fire");
-            Debug.Log($"{robotId}: YOLO classification received: {msg.data}, yoloFireDetected={yoloFireDetected}");
+            //Debug.Log($"{robotId}: YOLO classification received: {msg.data}, yoloFireDetected={yoloFireDetected}");
         }
 
         // Same thing for 1 robot.  3D World position of the warehouse fire
@@ -152,7 +159,7 @@ namespace RosSharp.Control
         
         void StopRobotCallback(StringMsg msg)
         {
-            Debug.Log($"{robotId}: Received stop message: {msg.data}, but continuing to move toward fires");
+            //Debug.Log($"{robotId}: Received stop message: {msg.data}, but continuing to move toward fires");
         }
 
         // "Goal" meaning a fire's 3d coordinates to navigate to and extinguish
@@ -162,7 +169,7 @@ namespace RosSharp.Control
             if (remainingFires.Length == 0)
             {
                 hasGoal = false;
-                Debug.Log($"{robotId}: No more fires in scene, stopping");
+                //Debug.Log($"{robotId}: No more fires in scene, stopping");
                 return;
             }
 
@@ -193,7 +200,7 @@ namespace RosSharp.Control
                 actualFirePosition = assignedFire;
                 currentGoal = actualFirePosition + new Vector3(navigationOffset, 0f, navigationOffset);
                 hasGoal = true;
-                Debug.Log($"{robotId}: Assigned fire at {actualFirePosition}, navigating to: {currentGoal}, remaining fires: {availableFirePositions.Count}");
+                //Debug.Log($"{robotId}: Assigned fire at {actualFirePosition}, navigating to: {currentGoal}, remaining fires: {availableFirePositions.Count}");
             }
         }
 
@@ -211,7 +218,7 @@ namespace RosSharp.Control
             if (other.CompareTag("Shelf"))
             {
                 isAvoiding = false;
-                Debug.Log($"{robotId}: Exited shelf trigger");
+                //Debug.Log($"{robotId}: Exited shelf trigger");
             }
         }
 
@@ -278,7 +285,7 @@ namespace RosSharp.Control
                 float signedAngle = Vector3.SignedAngle(bf.forward, avoidanceDirection, Vector3.up);
                 float rotSpeed = Mathf.Clamp(signedAngle * 0.05f, -maxRotationalSpeed * 0.5f, maxRotationalSpeed * 0.5f);
                 RobotInput(navigationSpeed * 0.5f, rotSpeed);
-                Debug.Log($"{robotId}: Avoiding obstacle: Angle {signedAngle}, RotSpeed {rotSpeed}");
+                //Debug.Log($"{robotId}: Avoiding obstacle: Angle {signedAngle}, RotSpeed {rotSpeed}");
             }
         }
 
@@ -310,7 +317,7 @@ namespace RosSharp.Control
                         float signedAngle = Vector3.SignedAngle(bf.forward, avoidanceDir, Vector3.up);
                         float rotSpeed = Mathf.Clamp(signedAngle * 0.05f, -maxRotationalSpeed * 0.5f, maxRotationalSpeed * 0.5f);
                         RobotInput(navigationSpeed * 0.5f, rotSpeed);
-                        Debug.Log($"{robotId}: Avoiding robot at {otherPos}");
+                        //Debug.Log($"{robotId}: Avoiding robot at {otherPos}");
                         break;
                     }
                 }
@@ -326,7 +333,7 @@ namespace RosSharp.Control
             if (remainingFires.Length == 0)
             {
                 RobotInput(0f, 0f);
-                Debug.Log($"{robotId}: No fires remaining, stopping");
+                //Debug.Log($"{robotId}: No fires remaining, stopping");
                 return;
             }
 
@@ -359,7 +366,7 @@ namespace RosSharp.Control
 
                     Destroy(fire);
                     ProcessNextGoal();
-                    Debug.Log($"{robotId}: Extinguished fire at {actualFirePosition}");
+                    //Debug.Log($"{robotId}: Extinguished fire at {actualFirePosition}");
                     return;
                 }
             }
@@ -393,7 +400,7 @@ namespace RosSharp.Control
                 }
 
                 RobotInput(navigationSpeed, rotSpeed);
-                Debug.Log($"{robotId}: Moving to: {currentGoal}, Distance: {distance}, RotSpeed: {rotSpeed}");
+                //Debug.Log($"{robotId}: Moving to: {currentGoal}, Distance: {distance}, RotSpeed: {rotSpeed}");
             }
             else
             {
@@ -409,6 +416,17 @@ namespace RosSharp.Control
                     }
                 }
             }
+        }
+
+        void Update()
+        {
+            Vector3 direction = currentGoal - bf.position;
+            direction.y = 0;
+            float distance = direction.magnitude;
+
+            Float32Msg distanceMsg = new Float32Msg { data = distance };
+            ros.Publish(distanceTopic, distanceMsg);
+            // Debug.Log($"{robotId}: Published distance {distanceMsg.data} to {distanceTopic}");
         }
 
         // Water particle is played in previous function, then calls this function to deactivate it.
