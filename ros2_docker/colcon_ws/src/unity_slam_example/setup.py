@@ -15,7 +15,8 @@ setup(
         (os.path.join('share', package_name), [
                                                 'rviz/nav2_unity.rviz',
                                                 'launch/unity_slam_example.py',
-                                                'launch/unity_viz_example.py'
+                                                'launch/unity_viz_example.py',
+                                                'launch/multi_unity_slam.py'
                                                 ])
     ],
     install_requires=['setuptools'],

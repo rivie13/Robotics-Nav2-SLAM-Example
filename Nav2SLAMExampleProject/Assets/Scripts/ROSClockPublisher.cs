@@ -27,7 +27,7 @@ public class ROSClockPublisher : MonoBehaviour
     void OnValidate()
     {
         var clocks = FindObjectsOfType<ROSClockPublisher>();
-        if (clocks.Length > 1)
+        if (clocks.Length > 3)//HAD TO CHANGE FOR MULTIROBOT
         {
             Debug.LogWarning("Found too many clock publishers in the scene, there should only be one!");
         }
