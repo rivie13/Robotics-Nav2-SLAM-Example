@@ -8,7 +8,7 @@ using System;
 
 namespace RosSharp.Control
 {
-    public class AGVController : MonoBehaviour
+    public class ROSAGVControl : MonoBehaviour
     {
         public GameObject wheel1;
         public GameObject wheel2;
@@ -47,7 +47,11 @@ namespace RosSharp.Control
         private bool yoloFireDetected = false;
 
 
-        
+        private float lastCmdReceived = 0f;
+        private float rosLinear = 0f;
+        private float rosAngular = 0f;
+        public float ROSTimeout = 0.5f;
+        private RotationDirection directionros;
         void Start()
         {
             wA1 = wheel1.GetComponent<ArticulationBody>();
@@ -61,9 +65,15 @@ namespace RosSharp.Control
             ros.Subscribe<StringMsg>("/stop_robot", StopRobotCallback);
             ros.Subscribe<StringMsg>("/yolo/classification", YoloClassificationCallback);
 
-           
+            ros.Subscribe<TwistMsg>("/cmd_vel", Command_Velocity_Callback);
         }
 
+        private void Command_Velocity_Callback(TwistMsg cmdVel)
+        {
+            rosLinear = (float)cmdVel.linear.x;
+            rosAngular = (float)cmdVel.angular.z;
+            lastCmdReceived = Time.time;
+        }
 
 
         //Listens to yolo v8 vision transform classification
@@ -313,7 +323,6 @@ namespace RosSharp.Control
             drive.damping = damping;
             joint.xDrive = drive;
         }
-        /*
         private void SetSpeed(ArticulationBody joint, float wheelSpeed = float.NaN)
         {
             ArticulationDrive drive = joint.xDrive;
@@ -327,17 +336,7 @@ namespace RosSharp.Control
             }
             joint.xDrive = drive;
         }
-        */
-        
 
-        private void SetSpeed(ArticulationBody joint, float wheelSpeed)
-        {
-            ArticulationDrive drive = joint.xDrive;
-            drive.targetVelocity = wheelSpeed;
-            joint.xDrive = drive;
-        }
-
-        
 
     }
 }

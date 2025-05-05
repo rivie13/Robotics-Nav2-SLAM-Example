@@ -1,0 +1,543 @@
+[0.000000] (-) TimerEvent: {}
+[0.001116] (ros_tcp_endpoint) JobQueued: {'identifier': 'ros_tcp_endpoint', 'dependencies': OrderedDict()}
+[0.002890] (vision_transform) JobQueued: {'identifier': 'vision_transform', 'dependencies': OrderedDict()}
+[0.003843] (unity_slam_example) JobQueued: {'identifier': 'unity_slam_example', 'dependencies': OrderedDict([('vision_transform', '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform')])}
+[0.004155] (vision_transform) JobStarted: {'identifier': 'vision_transform'}
+[0.093946] (-) TimerEvent: {}
+[0.126714] (ros_tcp_endpoint) JobStarted: {'identifier': 'ros_tcp_endpoint'}
+[0.194089] (-) TimerEvent: {}
+[0.295633] (-) TimerEvent: {}
+[0.396723] (-) TimerEvent: {}
+[0.497552] (-) TimerEvent: {}
+[0.598363] (-) TimerEvent: {}
+[0.705415] (-) TimerEvent: {}
+[0.810238] (-) TimerEvent: {}
+[0.913018] (-) TimerEvent: {}
+[1.014352] (-) TimerEvent: {}
+[1.115700] (-) TimerEvent: {}
+[1.218147] (-) TimerEvent: {}
+[1.324789] (-) TimerEvent: {}
+[1.428694] (-) TimerEvent: {}
+[1.532336] (-) TimerEvent: {}
+[1.635660] (-) TimerEvent: {}
+[1.740383] (-) TimerEvent: {}
+[1.843275] (-) TimerEvent: {}
+[1.944619] (-) TimerEvent: {}
+[2.045988] (-) TimerEvent: {}
+[2.149771] (-) TimerEvent: {}
+[2.251136] (-) TimerEvent: {}
+[2.352716] (-) TimerEvent: {}
+[2.453926] (-) TimerEvent: {}
+[2.555381] (-) TimerEvent: {}
+[2.661627] (-) TimerEvent: {}
+[2.763413] (-) TimerEvent: {}
+[2.866897] (-) TimerEvent: {}
+[2.968228] (-) TimerEvent: {}
+[3.069724] (-) TimerEvent: {}
+[3.170888] (-) TimerEvent: {}
+[3.272472] (-) TimerEvent: {}
+[3.378154] (-) TimerEvent: {}
+[3.480187] (-) TimerEvent: {}
+[3.582522] (-) TimerEvent: {}
+[3.686604] (-) TimerEvent: {}
+[3.789296] (-) TimerEvent: {}
+[3.893863] (-) TimerEvent: {}
+[3.995221] (-) TimerEvent: {}
+[4.097111] (-) TimerEvent: {}
+[4.200087] (-) TimerEvent: {}
+[4.301228] (-) TimerEvent: {}
+[4.402870] (-) TimerEvent: {}
+[4.504510] (-) TimerEvent: {}
+[4.605602] (-) TimerEvent: {}
+[4.706655] (-) TimerEvent: {}
+[4.807810] (-) TimerEvent: {}
+[4.909041] (-) TimerEvent: {}
+[5.010402] (-) TimerEvent: {}
+[5.112199] (-) TimerEvent: {}
+[5.213093] (-) TimerEvent: {}
+[5.315228] (-) TimerEvent: {}
+[5.416151] (-) TimerEvent: {}
+[5.517087] (-) TimerEvent: {}
+[5.618044] (-) TimerEvent: {}
+[5.723387] (-) TimerEvent: {}
+[5.827890] (-) TimerEvent: {}
+[5.929319] (-) TimerEvent: {}
+[5.948114] (vision_transform) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/vision_transform', 'build', '--build-base', '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/build', 'install', '--record', '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/src/vision_transform', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'jaych', 'IGN_GAZEBO_RTF_FACTOR_MAX': '2.0', 'GIT_ASKPASS': '/home/jaych/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/askpass.sh', 'IGN_GAZEBO_RENDER_ENGINE_SERVER_DEBUG': '1', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'update-motd', 'HOME': '/home/jaych', 'OLDPWD': '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example', 'TERM_PROGRAM_VERSION': '1.99.3', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-0860aaca-14e2-48a5-bf95-b577b7525629.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/jaych/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/jaych/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/node', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu-22.04', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'jaych', 'NAME': 'jayhaych', 'WSL_INTEROP': '/run/WSL/593_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'LIBGL_ALWAYS_INDIRECT': '0', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/jaych/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/bin/remote-cli:/home/jaych/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/National Instruments/Shared/OpenVINO/:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0/:/mnt/c/windows/System32/OpenSSH/:/mnt/c/Program Files/HP/HP One Agent:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/MATLAB/R2024b/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR:/mnt/c/Program Files/dotnet/:/mnt/c/Users/jasea/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/jasea/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/jasea/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/jasea/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2024.2.1/bin:/mnt/c/ffmpeg:/mnt/c/Users/jasea/AppData/Local/Android/Sdk/platform-tools:/mnt/c/Users/jasea/.dotnet/tools:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-0fca0860f4.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/unity_slam_example:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/vision_transform:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/ros_tcp_endpoint:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/autonomy:/opt/ros/humble:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install', 'IGN_GAZEBO_MODEL_CACHE_DISABLE': '1', 'SHELL': '/bin/bash', 'ROS_WS': '/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/python3.10/site-packages:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/unity_slam_example/lib/python3.10/site-packages:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/vision_transform/lib/python3.10/site-packages:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/autonomy/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': ':/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install', 'GZ_GPU_ASYNC': '1', 'WSLENV': 'VSCODE_WSL_EXT_LOCATION/up'}, 'shell': False}
+[6.016624] (ros_tcp_endpoint) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/ros_tcp_endpoint', 'build', '--build-base', '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/ros_tcp_endpoint/build', 'install', '--record', '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/ros_tcp_endpoint/install.log', '--install-scripts', '$base/lib/ros_tcp_endpoint', '--single-version-externally-managed', 'install_data'], 'cwd': '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/src/ROS-TCP-Endpoint', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'jaych', 'IGN_GAZEBO_RTF_FACTOR_MAX': '2.0', 'GIT_ASKPASS': '/home/jaych/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/askpass.sh', 'IGN_GAZEBO_RENDER_ENGINE_SERVER_DEBUG': '1', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'update-motd', 'HOME': '/home/jaych', 'OLDPWD': '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example', 'TERM_PROGRAM_VERSION': '1.99.3', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-0860aaca-14e2-48a5-bf95-b577b7525629.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/jaych/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/jaych/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/node', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu-22.04', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'jaych', 'NAME': 'jayhaych', 'WSL_INTEROP': '/run/WSL/593_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'LIBGL_ALWAYS_INDIRECT': '0', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/jaych/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/bin/remote-cli:/home/jaych/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/National Instruments/Shared/OpenVINO/:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0/:/mnt/c/windows/System32/OpenSSH/:/mnt/c/Program Files/HP/HP One Agent:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/MATLAB/R2024b/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR:/mnt/c/Program Files/dotnet/:/mnt/c/Users/jasea/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/jasea/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/jasea/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/jasea/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2024.2.1/bin:/mnt/c/ffmpeg:/mnt/c/Users/jasea/AppData/Local/Android/Sdk/platform-tools:/mnt/c/Users/jasea/.dotnet/tools:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-0fca0860f4.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/unity_slam_example:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/vision_transform:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/ros_tcp_endpoint:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/autonomy:/opt/ros/humble:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install', 'IGN_GAZEBO_MODEL_CACHE_DISABLE': '1', 'SHELL': '/bin/bash', 'ROS_WS': '/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/ros_tcp_endpoint', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/ros_tcp_endpoint/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/unity_slam_example/lib/python3.10/site-packages:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/vision_transform/lib/python3.10/site-packages:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/autonomy/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': ':/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install', 'GZ_GPU_ASYNC': '1', 'WSLENV': 'VSCODE_WSL_EXT_LOCATION/up'}, 'shell': False}
+[6.057753] (-) TimerEvent: {}
+[6.159027] (-) TimerEvent: {}
+[6.260445] (-) TimerEvent: {}
+[6.361500] (-) TimerEvent: {}
+[6.462467] (-) TimerEvent: {}
+[6.565762] (-) TimerEvent: {}
+[6.667074] (-) TimerEvent: {}
+[6.769356] (-) TimerEvent: {}
+[6.871109] (-) TimerEvent: {}
+[6.972312] (-) TimerEvent: {}
+[7.074070] (-) TimerEvent: {}
+[7.175166] (-) TimerEvent: {}
+[7.276481] (-) TimerEvent: {}
+[7.378024] (-) TimerEvent: {}
+[7.479184] (-) TimerEvent: {}
+[7.580390] (-) TimerEvent: {}
+[7.681815] (-) TimerEvent: {}
+[7.783372] (-) TimerEvent: {}
+[7.884477] (-) TimerEvent: {}
+[7.985736] (-) TimerEvent: {}
+[8.087328] (-) TimerEvent: {}
+[8.162743] (ros_tcp_endpoint) StderrLine: {'line': b"/home/jaych/.local/lib/python3.10/site-packages/setuptools/dist.py:717: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead\n"}
+[8.165915] (ros_tcp_endpoint) StderrLine: {'line': b'  warnings.warn(\n'}
+[8.187603] (-) TimerEvent: {}
+[8.233632] (vision_transform) StdoutLine: {'line': b'running egg_info\n'}
+[8.246512] (vision_transform) StdoutLine: {'line': b'writing ../../build/vision_transform/vision_transform.egg-info/PKG-INFO\n'}
+[8.251552] (ros_tcp_endpoint) StdoutLine: {'line': b'running egg_info\n'}
+[8.264549] (ros_tcp_endpoint) StdoutLine: {'line': b'writing ../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/PKG-INFO\n'}
+[8.268493] (vision_transform) StdoutLine: {'line': b'writing dependency_links to ../../build/vision_transform/vision_transform.egg-info/dependency_links.txt\n'}
+[8.281879] (ros_tcp_endpoint) StdoutLine: {'line': b'writing dependency_links to ../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/dependency_links.txt\n'}
+[8.284871] (vision_transform) StdoutLine: {'line': b'writing entry points to ../../build/vision_transform/vision_transform.egg-info/entry_points.txt\n'}
+[8.288271] (-) TimerEvent: {}
+[8.296230] (vision_transform) StdoutLine: {'line': b'writing requirements to ../../build/vision_transform/vision_transform.egg-info/requires.txt\n'}
+[8.301168] (ros_tcp_endpoint) StdoutLine: {'line': b'writing entry points to ../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/entry_points.txt\n'}
+[8.305140] (vision_transform) StdoutLine: {'line': b'writing top-level names to ../../build/vision_transform/vision_transform.egg-info/top_level.txt\n'}
+[8.311145] (ros_tcp_endpoint) StdoutLine: {'line': b'writing requirements to ../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/requires.txt\n'}
+[8.319319] (ros_tcp_endpoint) StdoutLine: {'line': b'writing top-level names to ../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/top_level.txt\n'}
+[8.388461] (-) TimerEvent: {}
+[8.404438] (vision_transform) StdoutLine: {'line': b"reading manifest file '../../build/vision_transform/vision_transform.egg-info/SOURCES.txt'\n"}
+[8.464867] (ros_tcp_endpoint) StdoutLine: {'line': b"reading manifest file '../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/SOURCES.txt'\n"}
+[8.488787] (-) TimerEvent: {}
+[8.590272] (-) TimerEvent: {}
+[8.592018] (vision_transform) StdoutLine: {'line': b"writing manifest file '../../build/vision_transform/vision_transform.egg-info/SOURCES.txt'\n"}
+[8.602843] (vision_transform) StdoutLine: {'line': b'running build\n'}
+[8.605480] (vision_transform) StdoutLine: {'line': b'running build_py\n'}
+[8.656473] (ros_tcp_endpoint) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[8.690603] (-) TimerEvent: {}
+[8.792357] (-) TimerEvent: {}
+[8.848407] (vision_transform) StdoutLine: {'line': b'running install\n'}
+[8.854471] (vision_transform) StdoutLine: {'line': b'running install_lib\n'}
+[8.876312] (ros_tcp_endpoint) StdoutLine: {'line': b"writing manifest file '../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info/SOURCES.txt'\n"}
+[8.892494] (-) TimerEvent: {}
+[8.900644] (ros_tcp_endpoint) StdoutLine: {'line': b'running build\n'}
+[8.911418] (ros_tcp_endpoint) StdoutLine: {'line': b'running build_py\n'}
+[8.992863] (-) TimerEvent: {}
+[9.094444] (-) TimerEvent: {}
+[9.195582] (-) TimerEvent: {}
+[9.296970] (-) TimerEvent: {}
+[9.353872] (vision_transform) StdoutLine: {'line': b'running install_data\n'}
+[9.397172] (-) TimerEvent: {}
+[9.449246] (vision_transform) StdoutLine: {'line': b'running install_egg_info\n'}
+[9.480621] (vision_transform) StdoutLine: {'line': b"removing '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/python3.10/site-packages/vision_transform-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[9.497440] (-) TimerEvent: {}
+[9.515933] (ros_tcp_endpoint) StdoutLine: {'line': b'running install\n'}
+[9.519498] (ros_tcp_endpoint) StdoutLine: {'line': b'running install_lib\n'}
+[9.597610] (-) TimerEvent: {}
+[9.700350] (-) TimerEvent: {}
+[9.723406] (vision_transform) StdoutLine: {'line': b'Copying ../../build/vision_transform/vision_transform.egg-info to /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/python3.10/site-packages/vision_transform-0.0.0-py3.10.egg-info\n'}
+[9.800447] (-) TimerEvent: {}
+[9.901011] (-) TimerEvent: {}
+[10.002066] (-) TimerEvent: {}
+[10.102828] (-) TimerEvent: {}
+[10.203972] (-) TimerEvent: {}
+[10.306105] (-) TimerEvent: {}
+[10.410477] (-) TimerEvent: {}
+[10.513369] (-) TimerEvent: {}
+[10.614664] (-) TimerEvent: {}
+[10.716228] (-) TimerEvent: {}
+[10.824724] (-) TimerEvent: {}
+[10.925877] (-) TimerEvent: {}
+[10.993859] (vision_transform) StdoutLine: {'line': b'running install_scripts\n'}
+[11.026194] (-) TimerEvent: {}
+[11.127666] (-) TimerEvent: {}
+[11.195170] (vision_transform) StdoutLine: {'line': b'Installing multirobot_yolo script to /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/vision_transform\n'}
+[11.227839] (-) TimerEvent: {}
+[11.237760] (vision_transform) StdoutLine: {'line': b'Installing yolo_node script to /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/vision_transform\n'}
+[11.290808] (vision_transform) StdoutLine: {'line': b"writing list of installed files to '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/vision_transform/install.log'\n"}
+[11.324488] (vision_transform) CommandEnded: {'returncode': 0}
+[11.327922] (-) TimerEvent: {}
+[11.429127] (-) TimerEvent: {}
+[11.532427] (-) TimerEvent: {}
+[11.548631] (ros_tcp_endpoint) StdoutLine: {'line': b'running install_data\n'}
+[11.632695] (-) TimerEvent: {}
+[11.734217] (-) TimerEvent: {}
+[11.842032] (-) TimerEvent: {}
+[11.867809] (ros_tcp_endpoint) StdoutLine: {'line': b'running install_egg_info\n'}
+[11.917108] (ros_tcp_endpoint) StdoutLine: {'line': b"removing '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint-0.0.1-py3.10.egg-info' (and everything under it)\n"}
+[11.942178] (-) TimerEvent: {}
+[12.043954] (-) TimerEvent: {}
+[12.153016] (-) TimerEvent: {}
+[12.257738] (-) TimerEvent: {}
+[12.359275] (-) TimerEvent: {}
+[12.373145] (ros_tcp_endpoint) StdoutLine: {'line': b'Copying ../../build/ros_tcp_endpoint/ros_tcp_endpoint.egg-info to /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages/ros_tcp_endpoint-0.0.1-py3.10.egg-info\n'}
+[12.459370] (-) TimerEvent: {}
+[12.561343] (-) TimerEvent: {}
+[12.663332] (-) TimerEvent: {}
+[12.767022] (-) TimerEvent: {}
+[12.873809] (-) TimerEvent: {}
+[12.975972] (-) TimerEvent: {}
+[13.074806] (vision_transform) JobEnded: {'identifier': 'vision_transform', 'rc': 0}
+[13.109544] (-) TimerEvent: {}
+[13.110556] (unity_slam_example) JobStarted: {'identifier': 'unity_slam_example'}
+[13.209825] (-) TimerEvent: {}
+[13.310536] (-) TimerEvent: {}
+[13.411609] (-) TimerEvent: {}
+[13.516627] (-) TimerEvent: {}
+[13.617832] (-) TimerEvent: {}
+[13.720656] (-) TimerEvent: {}
+[13.769374] (ros_tcp_endpoint) StdoutLine: {'line': b'running install_scripts\n'}
+[13.820817] (-) TimerEvent: {}
+[13.924221] (-) TimerEvent: {}
+[14.025864] (-) TimerEvent: {}
+[14.127594] (-) TimerEvent: {}
+[14.229408] (-) TimerEvent: {}
+[14.280974] (ros_tcp_endpoint) StdoutLine: {'line': b'Installing default_server_endpoint script to /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/ros_tcp_endpoint/lib/ros_tcp_endpoint\n'}
+[14.329506] (-) TimerEvent: {}
+[14.355258] (ros_tcp_endpoint) StdoutLine: {'line': b"writing list of installed files to '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/ros_tcp_endpoint/install.log'\n"}
+[14.429645] (-) TimerEvent: {}
+[14.531855] (-) TimerEvent: {}
+[14.640492] (-) TimerEvent: {}
+[14.742625] (-) TimerEvent: {}
+[14.853752] (-) TimerEvent: {}
+[14.955940] (-) TimerEvent: {}
+[15.057786] (-) TimerEvent: {}
+[15.158641] (-) TimerEvent: {}
+[15.260338] (-) TimerEvent: {}
+[15.362234] (-) TimerEvent: {}
+[15.463638] (-) TimerEvent: {}
+[15.564893] (-) TimerEvent: {}
+[15.666050] (-) TimerEvent: {}
+[15.767517] (-) TimerEvent: {}
+[15.868731] (-) TimerEvent: {}
+[15.970157] (-) TimerEvent: {}
+[16.074927] (-) TimerEvent: {}
+[16.177623] (-) TimerEvent: {}
+[16.286612] (-) TimerEvent: {}
+[16.388383] (-) TimerEvent: {}
+[16.489591] (-) TimerEvent: {}
+[16.590703] (-) TimerEvent: {}
+[16.687965] (ros_tcp_endpoint) CommandEnded: {'returncode': 0}
+[16.697774] (-) TimerEvent: {}
+[16.805955] (-) TimerEvent: {}
+[16.909543] (-) TimerEvent: {}
+[17.016557] (-) TimerEvent: {}
+[17.126155] (-) TimerEvent: {}
+[17.228907] (-) TimerEvent: {}
+[17.330238] (-) TimerEvent: {}
+[17.431978] (-) TimerEvent: {}
+[17.534364] (-) TimerEvent: {}
+[17.638052] (-) TimerEvent: {}
+[17.741360] (-) TimerEvent: {}
+[17.853813] (-) TimerEvent: {}
+[17.956154] (-) TimerEvent: {}
+[18.057945] (-) TimerEvent: {}
+[18.159391] (-) TimerEvent: {}
+[18.266710] (-) TimerEvent: {}
+[18.368921] (-) TimerEvent: {}
+[18.473555] (-) TimerEvent: {}
+[18.576032] (-) TimerEvent: {}
+[18.677859] (-) TimerEvent: {}
+[18.689306] (ros_tcp_endpoint) JobEnded: {'identifier': 'ros_tcp_endpoint', 'rc': 0}
+[18.778183] (-) TimerEvent: {}
+[18.879708] (-) TimerEvent: {}
+[18.980736] (-) TimerEvent: {}
+[19.081790] (-) TimerEvent: {}
+[19.185853] (-) TimerEvent: {}
+[19.287295] (-) TimerEvent: {}
+[19.389459] (-) TimerEvent: {}
+[19.498969] (-) TimerEvent: {}
+[19.600184] (-) TimerEvent: {}
+[19.706716] (-) TimerEvent: {}
+[19.809213] (-) TimerEvent: {}
+[19.912513] (-) TimerEvent: {}
+[20.014532] (-) TimerEvent: {}
+[20.117087] (-) TimerEvent: {}
+[20.222994] (-) TimerEvent: {}
+[20.325357] (-) TimerEvent: {}
+[20.426657] (-) TimerEvent: {}
+[20.528022] (-) TimerEvent: {}
+[20.629559] (-) TimerEvent: {}
+[20.734139] (-) TimerEvent: {}
+[20.838199] (-) TimerEvent: {}
+[20.940204] (-) TimerEvent: {}
+[21.043148] (-) TimerEvent: {}
+[21.144702] (-) TimerEvent: {}
+[21.248150] (-) TimerEvent: {}
+[21.356451] (-) TimerEvent: {}
+[21.465591] (-) TimerEvent: {}
+[21.573510] (-) TimerEvent: {}
+[21.676107] (-) TimerEvent: {}
+[21.779895] (-) TimerEvent: {}
+[21.883219] (-) TimerEvent: {}
+[21.985826] (-) TimerEvent: {}
+[22.087273] (-) TimerEvent: {}
+[22.188465] (-) TimerEvent: {}
+[22.290184] (-) TimerEvent: {}
+[22.392886] (-) TimerEvent: {}
+[22.504197] (-) TimerEvent: {}
+[22.605117] (-) TimerEvent: {}
+[22.706620] (-) TimerEvent: {}
+[22.809053] (-) TimerEvent: {}
+[22.912755] (-) TimerEvent: {}
+[23.015927] (-) TimerEvent: {}
+[23.117381] (-) TimerEvent: {}
+[23.218847] (-) TimerEvent: {}
+[23.320668] (-) TimerEvent: {}
+[23.426178] (-) TimerEvent: {}
+[23.526675] (-) TimerEvent: {}
+[23.632144] (-) TimerEvent: {}
+[23.741210] (-) TimerEvent: {}
+[23.846014] (-) TimerEvent: {}
+[23.947883] (-) TimerEvent: {}
+[24.056311] (-) TimerEvent: {}
+[24.162848] (-) TimerEvent: {}
+[24.264555] (-) TimerEvent: {}
+[24.372236] (-) TimerEvent: {}
+[24.475354] (-) TimerEvent: {}
+[24.577742] (-) TimerEvent: {}
+[24.682286] (-) TimerEvent: {}
+[24.783970] (-) TimerEvent: {}
+[24.884916] (-) TimerEvent: {}
+[24.986298] (-) TimerEvent: {}
+[25.090581] (-) TimerEvent: {}
+[25.191851] (-) TimerEvent: {}
+[25.297379] (-) TimerEvent: {}
+[25.403056] (-) TimerEvent: {}
+[25.505508] (-) TimerEvent: {}
+[25.607894] (-) TimerEvent: {}
+[25.710362] (-) TimerEvent: {}
+[25.813391] (-) TimerEvent: {}
+[25.924026] (-) TimerEvent: {}
+[26.033409] (-) TimerEvent: {}
+[26.142108] (-) TimerEvent: {}
+[26.247867] (-) TimerEvent: {}
+[26.357376] (-) TimerEvent: {}
+[26.464081] (-) TimerEvent: {}
+[26.571464] (-) TimerEvent: {}
+[26.676881] (-) TimerEvent: {}
+[26.780376] (-) TimerEvent: {}
+[26.888008] (-) TimerEvent: {}
+[26.990254] (-) TimerEvent: {}
+[27.094531] (-) TimerEvent: {}
+[27.198093] (-) TimerEvent: {}
+[27.300078] (-) TimerEvent: {}
+[27.404427] (-) TimerEvent: {}
+[27.506879] (-) TimerEvent: {}
+[27.613563] (-) TimerEvent: {}
+[27.720648] (-) TimerEvent: {}
+[27.826656] (-) TimerEvent: {}
+[27.928869] (-) TimerEvent: {}
+[28.035642] (-) TimerEvent: {}
+[28.137313] (-) TimerEvent: {}
+[28.245112] (-) TimerEvent: {}
+[28.348381] (-) TimerEvent: {}
+[28.451379] (-) TimerEvent: {}
+[28.553719] (-) TimerEvent: {}
+[28.661939] (-) TimerEvent: {}
+[28.767432] (-) TimerEvent: {}
+[28.869328] (-) TimerEvent: {}
+[28.973900] (-) TimerEvent: {}
+[29.078397] (-) TimerEvent: {}
+[29.183163] (-) TimerEvent: {}
+[29.284447] (-) TimerEvent: {}
+[29.385244] (-) TimerEvent: {}
+[29.487112] (-) TimerEvent: {}
+[29.588687] (-) TimerEvent: {}
+[29.698430] (-) TimerEvent: {}
+[29.805991] (-) TimerEvent: {}
+[29.915309] (-) TimerEvent: {}
+[30.020243] (-) TimerEvent: {}
+[30.039474] (unity_slam_example) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/unity_slam_example', 'build', '--build-base', '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/unity_slam_example/build', 'install', '--record', '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/unity_slam_example/install.log', '--install-scripts', '$base/lib/unity_slam_example', '--single-version-externally-managed', 'install_data'], 'cwd': '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/src/unity_slam_example', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'jaych', 'IGN_GAZEBO_RTF_FACTOR_MAX': '2.0', 'GIT_ASKPASS': '/home/jaych/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/askpass.sh', 'IGN_GAZEBO_RENDER_ENGINE_SERVER_DEBUG': '1', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'update-motd', 'HOME': '/home/jaych', 'OLDPWD': '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example', 'TERM_PROGRAM_VERSION': '1.99.3', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-0860aaca-14e2-48a5-bf95-b577b7525629.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/jaych/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/jaych/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/node', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu-22.04', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'jaych', 'NAME': 'jayhaych', 'WSL_INTEROP': '/run/WSL/593_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'LIBGL_ALWAYS_INDIRECT': '0', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/jaych/.vscode-server/bin/17baf841131aa23349f217ca7c570c76ee87b957/bin/remote-cli:/home/jaych/.local/bin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/National Instruments/Shared/OpenVINO/:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/windows/system32:/mnt/c/windows:/mnt/c/windows/System32/Wbem:/mnt/c/windows/System32/WindowsPowerShell/v1.0/:/mnt/c/windows/System32/OpenSSH/:/mnt/c/Program Files/HP/HP One Agent:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/MATLAB/R2024b/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR:/mnt/c/Program Files/dotnet/:/mnt/c/Users/jasea/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/jasea/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/jasea/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/jasea/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files/JetBrains/IntelliJ IDEA 2024.2.1/bin:/mnt/c/ffmpeg:/mnt/c/Users/jasea/AppData/Local/Android/Sdk/platform-tools:/mnt/c/Users/jasea/.dotnet/tools:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-0fca0860f4.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/unity_slam_example:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/vision_transform:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/ros_tcp_endpoint:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/autonomy:/opt/ros/humble:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install', 'IGN_GAZEBO_MODEL_CACHE_DISABLE': '1', 'SHELL': '/bin/bash', 'ROS_WS': '/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/unity_slam_example', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/unity_slam_example/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/unity_slam_example/lib/python3.10/site-packages:/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/vision_transform/lib/python3.10/site-packages:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/unity_slam_example/lib/python3.10/site-packages:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/vision_transform/lib/python3.10/site-packages:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/ros_tcp_endpoint/lib/python3.10/site-packages:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/colcon_ws/install/autonomy/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': ':/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install:/home/jaych/robotics/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install', 'GZ_GPU_ASYNC': '1', 'WSLENV': 'VSCODE_WSL_EXT_LOCATION/up'}, 'shell': False}
+[30.120363] (-) TimerEvent: {}
+[30.223346] (-) TimerEvent: {}
+[30.324839] (-) TimerEvent: {}
+[30.432271] (-) TimerEvent: {}
+[30.533759] (-) TimerEvent: {}
+[30.635024] (-) TimerEvent: {}
+[30.740374] (-) TimerEvent: {}
+[30.843183] (-) TimerEvent: {}
+[30.950942] (-) TimerEvent: {}
+[31.056609] (-) TimerEvent: {}
+[31.164176] (-) TimerEvent: {}
+[31.268556] (-) TimerEvent: {}
+[31.370368] (-) TimerEvent: {}
+[31.474061] (-) TimerEvent: {}
+[31.575983] (-) TimerEvent: {}
+[31.679716] (-) TimerEvent: {}
+[31.787672] (-) TimerEvent: {}
+[31.889897] (-) TimerEvent: {}
+[31.994300] (-) TimerEvent: {}
+[32.096444] (-) TimerEvent: {}
+[32.198146] (-) TimerEvent: {}
+[32.301724] (-) TimerEvent: {}
+[32.412661] (-) TimerEvent: {}
+[32.519670] (-) TimerEvent: {}
+[32.623734] (-) TimerEvent: {}
+[32.728012] (-) TimerEvent: {}
+[32.832197] (-) TimerEvent: {}
+[32.933394] (-) TimerEvent: {}
+[33.036111] (-) TimerEvent: {}
+[33.146070] (-) TimerEvent: {}
+[33.247519] (-) TimerEvent: {}
+[33.356687] (-) TimerEvent: {}
+[33.464623] (-) TimerEvent: {}
+[33.572208] (-) TimerEvent: {}
+[33.681957] (-) TimerEvent: {}
+[33.783387] (-) TimerEvent: {}
+[33.888452] (-) TimerEvent: {}
+[33.990410] (-) TimerEvent: {}
+[34.095565] (-) TimerEvent: {}
+[34.199940] (-) TimerEvent: {}
+[34.306233] (-) TimerEvent: {}
+[34.411764] (-) TimerEvent: {}
+[34.517610] (-) TimerEvent: {}
+[34.621820] (-) TimerEvent: {}
+[34.723674] (-) TimerEvent: {}
+[34.826054] (-) TimerEvent: {}
+[34.928431] (-) TimerEvent: {}
+[35.038229] (-) TimerEvent: {}
+[35.140474] (-) TimerEvent: {}
+[35.250433] (-) TimerEvent: {}
+[35.355927] (-) TimerEvent: {}
+[35.459245] (-) TimerEvent: {}
+[35.560543] (-) TimerEvent: {}
+[35.662994] (-) TimerEvent: {}
+[35.764728] (-) TimerEvent: {}
+[35.872721] (-) TimerEvent: {}
+[35.974206] (-) TimerEvent: {}
+[36.075710] (-) TimerEvent: {}
+[36.185369] (-) TimerEvent: {}
+[36.292851] (-) TimerEvent: {}
+[36.403919] (-) TimerEvent: {}
+[36.512828] (-) TimerEvent: {}
+[36.620947] (-) TimerEvent: {}
+[36.722530] (-) TimerEvent: {}
+[36.827179] (-) TimerEvent: {}
+[36.929852] (-) TimerEvent: {}
+[37.032896] (-) TimerEvent: {}
+[37.143911] (-) TimerEvent: {}
+[37.250525] (-) TimerEvent: {}
+[37.352522] (-) TimerEvent: {}
+[37.455099] (-) TimerEvent: {}
+[37.559011] (-) TimerEvent: {}
+[37.661554] (-) TimerEvent: {}
+[37.763972] (-) TimerEvent: {}
+[37.869888] (-) TimerEvent: {}
+[37.971710] (-) TimerEvent: {}
+[38.073375] (-) TimerEvent: {}
+[38.179304] (-) TimerEvent: {}
+[38.280766] (-) TimerEvent: {}
+[38.382288] (-) TimerEvent: {}
+[38.485597] (-) TimerEvent: {}
+[38.591056] (-) TimerEvent: {}
+[38.697694] (-) TimerEvent: {}
+[38.799619] (-) TimerEvent: {}
+[38.908879] (-) TimerEvent: {}
+[39.015084] (-) TimerEvent: {}
+[39.120128] (-) TimerEvent: {}
+[39.221850] (-) TimerEvent: {}
+[39.325907] (-) TimerEvent: {}
+[39.429851] (-) TimerEvent: {}
+[39.533213] (-) TimerEvent: {}
+[39.634628] (-) TimerEvent: {}
+[39.699147] (unity_slam_example) StderrLine: {'line': b"/home/jaych/.local/lib/python3.10/site-packages/setuptools/dist.py:717: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead\n"}
+[39.709050] (unity_slam_example) StderrLine: {'line': b'  warnings.warn(\n'}
+[39.735052] (-) TimerEvent: {}
+[39.836748] (-) TimerEvent: {}
+[39.943577] (-) TimerEvent: {}
+[40.048032] (-) TimerEvent: {}
+[40.115884] (unity_slam_example) StdoutLine: {'line': b'running egg_info\n'}
+[40.148439] (-) TimerEvent: {}
+[40.201243] (unity_slam_example) StdoutLine: {'line': b'writing ../../build/unity_slam_example/unity_slam_example.egg-info/PKG-INFO\n'}
+[40.248871] (-) TimerEvent: {}
+[40.299891] (unity_slam_example) StdoutLine: {'line': b'writing dependency_links to ../../build/unity_slam_example/unity_slam_example.egg-info/dependency_links.txt\n'}
+[40.349173] (-) TimerEvent: {}
+[40.389129] (unity_slam_example) StdoutLine: {'line': b'writing requirements to ../../build/unity_slam_example/unity_slam_example.egg-info/requires.txt\n'}
+[40.405526] (unity_slam_example) StdoutLine: {'line': b'writing top-level names to ../../build/unity_slam_example/unity_slam_example.egg-info/top_level.txt\n'}
+[40.449342] (-) TimerEvent: {}
+[40.550895] (-) TimerEvent: {}
+[40.584737] (unity_slam_example) StdoutLine: {'line': b"reading manifest file '../../build/unity_slam_example/unity_slam_example.egg-info/SOURCES.txt'\n"}
+[40.651254] (-) TimerEvent: {}
+[40.758879] (-) TimerEvent: {}
+[40.861262] (-) TimerEvent: {}
+[40.962659] (-) TimerEvent: {}
+[41.066905] (-) TimerEvent: {}
+[41.170181] (-) TimerEvent: {}
+[41.272292] (-) TimerEvent: {}
+[41.375035] (-) TimerEvent: {}
+[41.404227] (unity_slam_example) StdoutLine: {'line': b"writing manifest file '../../build/unity_slam_example/unity_slam_example.egg-info/SOURCES.txt'\n"}
+[41.447576] (unity_slam_example) StdoutLine: {'line': b'running build\n'}
+[41.458197] (unity_slam_example) StdoutLine: {'line': b'running install\n'}
+[41.470702] (unity_slam_example) StdoutLine: {'line': b'running install_data\n'}
+[41.477798] (-) TimerEvent: {}
+[41.579133] (-) TimerEvent: {}
+[41.682435] (-) TimerEvent: {}
+[41.787675] (-) TimerEvent: {}
+[41.889937] (-) TimerEvent: {}
+[41.992095] (-) TimerEvent: {}
+[42.095147] (-) TimerEvent: {}
+[42.198410] (-) TimerEvent: {}
+[42.300440] (-) TimerEvent: {}
+[42.307668] (unity_slam_example) StdoutLine: {'line': b'running install_egg_info\n'}
+[42.400764] (-) TimerEvent: {}
+[42.402123] (unity_slam_example) StdoutLine: {'line': b"removing '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/unity_slam_example/lib/python3.10/site-packages/unity_slam_example-0.0.1-py3.10.egg-info' (and everything under it)\n"}
+[42.500983] (-) TimerEvent: {}
+[42.606666] (-) TimerEvent: {}
+[42.708546] (-) TimerEvent: {}
+[42.812126] (-) TimerEvent: {}
+[42.817113] (unity_slam_example) StdoutLine: {'line': b'Copying ../../build/unity_slam_example/unity_slam_example.egg-info to /mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/install/unity_slam_example/lib/python3.10/site-packages/unity_slam_example-0.0.1-py3.10.egg-info\n'}
+[42.912313] (-) TimerEvent: {}
+[43.013575] (-) TimerEvent: {}
+[43.118565] (-) TimerEvent: {}
+[43.220526] (-) TimerEvent: {}
+[43.321626] (-) TimerEvent: {}
+[43.423074] (-) TimerEvent: {}
+[43.529460] (-) TimerEvent: {}
+[43.637408] (-) TimerEvent: {}
+[43.743552] (-) TimerEvent: {}
+[43.848755] (-) TimerEvent: {}
+[43.951446] (-) TimerEvent: {}
+[44.056091] (-) TimerEvent: {}
+[44.160845] (-) TimerEvent: {}
+[44.265558] (-) TimerEvent: {}
+[44.372956] (-) TimerEvent: {}
+[44.474329] (-) TimerEvent: {}
+[44.579753] (-) TimerEvent: {}
+[44.687463] (-) TimerEvent: {}
+[44.792502] (-) TimerEvent: {}
+[44.839204] (unity_slam_example) StdoutLine: {'line': b'running install_scripts\n'}
+[44.892697] (-) TimerEvent: {}
+[44.994233] (-) TimerEvent: {}
+[45.097658] (-) TimerEvent: {}
+[45.201492] (-) TimerEvent: {}
+[45.306998] (-) TimerEvent: {}
+[45.409145] (-) TimerEvent: {}
+[45.510953] (-) TimerEvent: {}
+[45.613004] (-) TimerEvent: {}
+[45.633593] (unity_slam_example) StdoutLine: {'line': b"writing list of installed files to '/mnt/c/Users/jasea/OneDrive - Temple University/Desktop/helios/Robotics-Nav2-SLAM-Example/ros2_docker/colcon_ws/build/unity_slam_example/install.log'\n"}
+[45.712905] (unity_slam_example) CommandEnded: {'returncode': 0}
+[45.727142] (-) TimerEvent: {}
+[45.829462] (-) TimerEvent: {}
+[45.934579] (-) TimerEvent: {}
+[46.039094] (-) TimerEvent: {}
+[46.148144] (-) TimerEvent: {}
+[46.250059] (-) TimerEvent: {}
+[46.355393] (-) TimerEvent: {}
+[46.464039] (-) TimerEvent: {}
+[46.566158] (-) TimerEvent: {}
+[46.675827] (-) TimerEvent: {}
+[46.785014] (-) TimerEvent: {}
+[46.889711] (-) TimerEvent: {}
+[46.990939] (-) TimerEvent: {}
+[47.094474] (-) TimerEvent: {}
+[47.196439] (-) TimerEvent: {}
+[47.301259] (-) TimerEvent: {}
+[47.405890] (-) TimerEvent: {}
+[47.513674] (-) TimerEvent: {}
+[47.615737] (-) TimerEvent: {}
+[47.717841] (-) TimerEvent: {}
+[47.820450] (-) TimerEvent: {}
+[47.922019] (-) TimerEvent: {}
+[48.023310] (-) TimerEvent: {}
+[48.126006] (-) TimerEvent: {}
+[48.227982] (-) TimerEvent: {}
+[48.337641] (-) TimerEvent: {}
+[48.344594] (unity_slam_example) JobEnded: {'identifier': 'unity_slam_example', 'rc': 0}
+[48.384683] (-) EventReactorShutdown: {}
